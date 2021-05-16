@@ -11,8 +11,8 @@ const adminRoutes = require('./routes/admin')
 const facultyRoutes = require('./routes/faculty')
 const userRoutes = require('./routes/user')
 
-const port = 3000
-const hostname =  "localhost"
+const port = process.env.PORT || 3000
+const hostname = process.env.APP_HOSTNAME || "localhost"
 
 // Init app
 const app = express()
