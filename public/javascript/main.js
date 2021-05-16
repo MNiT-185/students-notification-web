@@ -482,7 +482,8 @@ $(document).ready(function() {
                 </div>
             </div>
         </div>  
-    </div>                       
+    </div>  
+    <br>                     
           `
         }
         if(result.data.video && result.data.content){
@@ -538,6 +539,7 @@ $(document).ready(function() {
           </div>
       </div>  
   </div> 
+  <br>
         `
         }
         if( result.data.content && !result.data.video && !result.data.image){
@@ -589,6 +591,7 @@ $(document).ready(function() {
         </div>
     </div>  
 </div> 
+<br>
         `
         }
         if( !result.data.content && result.data.video && !result.data.image){
@@ -641,6 +644,7 @@ $(document).ready(function() {
         </div>
     </div>  
 </div> 
+<br>
         `
         }
         if( !result.data.content && !result.data.video && result.data.image){
@@ -692,6 +696,7 @@ $(document).ready(function() {
         </div>
     </div>  
 </div> 
+<br>
         `
         }
       $("#listPost").prepend(newFeedsItem)
