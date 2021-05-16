@@ -21,7 +21,7 @@ const io = require('socket.io')(http);
 ConnectDB()
 
 // Enable post data for request
-app.use(express.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 // Config View Engine
 configViewEngine(app)
