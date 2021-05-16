@@ -59,5 +59,5 @@ io.on('connection', (socket) => {
 
 
 http.listen(port,()=>{
-    console.log(`Server is running at localhost:${PORT}`)
+    console.log(`Server is running `)
 })
