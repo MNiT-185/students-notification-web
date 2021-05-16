@@ -9,7 +9,7 @@ const { findById } = require('../models/User')
 
 let storageAvatar = multer.diskStorage({
     destination: (req,file,callback) =>{
-        callback(null,"src/public/images")
+        callback(null,"public/images")
     },
     filename : (req,file,callback) =>{
         let math = ["image/png","image/jpg","image/jpeg"]
@@ -94,7 +94,7 @@ let updateInfo = async (req,res) =>{
 
 let storageFile = multer.diskStorage({
     destination: (req,file,callback) =>{
-        callback(null,"src/public/imgNewFeeds")
+        callback(null,"public/imgNewFeeds")
     },
     filename : (req,file,callback) =>{
         let avatarName = `${Date.now()}-${file.originalname}`
