@@ -11,8 +11,7 @@ const adminRoutes = require('./routes/admin')
 const facultyRoutes = require('./routes/faculty')
 const userRoutes = require('./routes/user')
 
-const port = process.env.PORT || 3000
-const hostname = process.env.HOSTNAME || "localhost"
+const PORT = process.env.port||'3000';
 
 // Init app
 const app = express()
@@ -59,6 +58,6 @@ io.on('connection', (socket) => {
 });
 
 
-http.listen(port,()=>{
-    console.log(`Server is running at localhost:${port}`)
+http.listen(PORT,()=>{
+    console.log(`Server is running at localhost:${PORT}`)
 })
