@@ -12,7 +12,7 @@ const facultyRoutes = require('./routes/faculty')
 const userRoutes = require('./routes/user')
 
 const port = process.env.PORT || 3000
-const hostname = process.env.APP_HOSTNAME || "localhost"
+const hostname = process.env.HOSTNAME || "localhost"
 
 // Init app
 const app = express()
@@ -59,6 +59,6 @@ io.on('connection', (socket) => {
 });
 
 
-http.listen(port,hostname,()=>{
-    console.log(`Server is running at ${hostname}:${port}`)
+http.listen(port,()=>{
+    console.log(`Server is running at localhost:${port}`)
 })
