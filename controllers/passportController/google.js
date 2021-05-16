@@ -7,7 +7,7 @@ let initPassportGoogle = () =>{
     passport.use(new GoogleStrategy({
         clientID:'194508735007-o5vkp9ive7col2s1taqf9l73td7v5pcj.apps.googleusercontent.com',
         clientSecret:'th81pbFzc9BGL-43r3r4XNAh',
-        callbackURL:'http://localhost:3000/google/callback',
+        callbackURL:'https://students-notification-web.herokuapp.com/google/callback',
         passReqToCallback:true
       },
       async function(req, accessToken, refreshToken, profile, done) {
