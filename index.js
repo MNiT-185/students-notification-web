@@ -11,8 +11,6 @@ const adminRoutes = require('./routes/admin')
 const facultyRoutes = require('./routes/faculty')
 const userRoutes = require('./routes/user')
 
-
-
 // Init app
 const app = express()
 const http = require('http').Server(app);
