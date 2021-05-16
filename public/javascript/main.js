@@ -447,7 +447,7 @@ $(document).ready(function() {
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                           <li><button data-id="${result.data._id}" class="dropdown-item" type="button" id="btn-del-post">Xóa</button></li>
-                          <li><button class="dropdown-item" type="button"  id="btn-update-post">Sửa</button></li>
+                          <li><button data-id="${result.data._id}" data-content="${result.data.content}" data-image="${result.data.image}" data-video="${result.data.video}" id="btn-open-modal-edit-post" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updatePostModal" type="button">Sửa</button></li>
                         </ul>
                     </div>      
             </div>
@@ -502,7 +502,7 @@ $(document).ready(function() {
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <li><button data-id="${result.data._id}" class="dropdown-item" type="button" id="btn-del-post">Xóa</button></li>
-                        <li><button class="dropdown-item" type="button"  id="btn-update-post">Sửa</button></li>
+                        <li><button data-id="${result.data._id}" data-content="${result.data.content}" data-image="${result.data.image}" data-video="${result.data.video}" id="btn-open-modal-edit-post" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updatePostModal" type="button">Sửa</button></li>
                       </ul>
                   </div>      
           </div>
@@ -556,7 +556,7 @@ $(document).ready(function() {
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                       <li><button data-id="${result.data._id}" class="dropdown-item" type="button" id="btn-del-post">Xóa</button></li>
-                      <li><button class="dropdown-item" type="button"  id="btn-update-post">Sửa</button></li>
+                      <li><button data-id="${result.data._id}" data-content="${result.data.content}" data-image="${result.data.image}" data-video="${result.data.video}" id="btn-open-modal-edit-post" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updatePostModal" type="button">Sửa</button></li>
                     </ul>
                 </div>      
         </div>
@@ -608,7 +608,7 @@ $(document).ready(function() {
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                       <li><button data-id="${result.data._id}" class="dropdown-item" type="button" id="btn-del-post">Xóa</button></li>
-                      <li><button class="dropdown-item" type="button"  id="btn-update-post">Sửa</button></li>
+                      <li><button data-id="${result.data._id}" data-content="${result.data.content}" data-image="${result.data.image}" data-video="${result.data.video}" id="btn-open-modal-edit-post" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updatePostModal" type="button">Sửa</button></li>
                     </ul>
                 </div>      
         </div>
@@ -659,7 +659,7 @@ $(document).ready(function() {
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                       <li><button data-id="${result.data._id}" class="dropdown-item" type="button" id="btn-del-post">Xóa</button></li>
-                      <li><button class="dropdown-item" type="button"  id="btn-update-post">Sửa</button></li>
+                      <li><button data-id="${result.data._id}" data-content="${result.data.content}" data-image="${result.data.image}" data-video="${result.data.video}" id="btn-open-modal-edit-post" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updatePostModal" type="button">Sửa</button></li>
                     </ul>
                 </div>      
         </div>
@@ -770,37 +770,35 @@ $(document).ready(function() {
       data: data,
       success: function(result) {
         let item = `
-          <div class="commentItem" id="${result.data._id}">
-            <div class="d-flex justify-content-start">
-                <div class="col-md-1"><img id="avatarComment" class="avatarComment" src="/images/${result.data.sender.avatar}" alt="avatar"></div>
-                <div class="col-md-10">
-                    <label name="" id=""><h6>${result.data.sender.username}</h6></label>
-                    <label class="text-muted" name="" id=""><small>${result.data.createdAt}</small></label>
-                    <br>
-                    <label name="" id="">${result.data.text}</label>
-                </div>
-                <div class="col-md-1">
-                    <a data-id="${result.data._id}" id="btn-submit-delete-comment" href="">Xóa</a>
-                </div>
+        <div class="commentItem" id="${result.data._id}">
+        <div class="d-flex justify-content-start">
+            <div class="col-2 col-sm-2"><img id="avatarComment" class="avatarComment" src="/images/${result.data.sender.avatar}" alt="avatar"></div>
+            <div class="col-9 col-sm-8">
+                <label name="" id=""><h6>${result.data.sender.username}</h6></label>
+                <label class="text-muted" name="" id=""><small>${result.data.createdAt}</small></label>
+                <br>
+                <label name="" id="">${result.data.text}</label>
             </div>
+                <div class="col-1 col-sm-2">
+                    <a data-id="${result.data._id}" id="btn-submit-delete-comment" href="">Xóa</a> 
+                </div>
         </div>
-        <br>
+    </div>
+    <br>
         `
 
         let itemGuess = `
         <div class="commentItem" id="${result.data._id}">
-          <div class="d-flex justify-content-start">
-              <div class="col-md-1"><img id="avatarComment" class="avatarComment" src="/images/${result.data.sender.avatar}" alt="avatar"></div>
-              <div class="col-md-10">
-                  <label name="" id=""><h6>${result.data.sender.username}</h6></label>
-                  <label class="text-muted" name="" id=""><small>${result.data.createdAt}</small></label>
-                  <br>
-                  <label name="" id="">${result.data.text}</label>
-              </div>
-              <div class="col-md-1">
-              </div>
-          </div>
-      </div>
+        <div class="d-flex justify-content-start">
+            <div class="col-2 col-sm-2"><img id="avatarComment" class="avatarComment" src="/images/${result.data.sender.avatar}" alt="avatar"></div>
+            <div class="col-9 col-sm-8">
+                <label name="" id=""><h6>${result.data.sender.username}</h6></label>
+                <label class="text-muted" name="" id=""><small>${result.data.createdAt}</small></label>
+                <br>
+                <label name="" id="">${result.data.text}</label>
+            </div>
+        </div>
+    </div>
       <br>
       `
         let data = {
