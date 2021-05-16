@@ -1,6 +1,6 @@
 const multer =  require('multer')
 const UserModel = require('../models/User')
-const PostModel = require('../models/UserPorts.js')
+const PostModel = require('../models/UserPorts')
 const CommentModel = require('../models/Comment')
 const FacultyPostModel = require('../models/ManagePosts')
 const FacultyModel = require('../models/User')
