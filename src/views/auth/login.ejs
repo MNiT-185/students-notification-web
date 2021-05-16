@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>
+        Login
+    </title>
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>    
+     <!-- CSS -->
+     <link href="/stylesheets/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="bodyLogin">
+    <h1 class="text-center">WELCOME TO MY NOTIFICATIONS WEBSITE</h1>
+    <br>    
+    <div class="container container-login">
+        <div class="row">
+            <!--Sign In With Manage Account-->
+            <div class="col-12  col-sm-6">
+                <div class="form-container">
+                    <form method="POST" action="/loginLocal">
+                        <h1>Sign in</h1>
+                        <span>with your manage account</span>
+                        <% if(loginError.length > 0){ %>
+                            <div class="row">
+                                <div class="alert alert-danger text-center w-100 p-3">
+                                    <span><%= loginError %></span>
+                                </div>
+                            </div>
+                        <% } %>
+                        <input class="input-account" name="email" type="text" placeholder="Username" required/>
+                        <input class="input-account" name="password" type="password" placeholder="Password" required/>
+                        <button type="submit" class="signIn">Sign In</button>
+                    </form>
+                </div>
+            </div>
+            <!--Sign In With Student Account-->
+            <div class="col-12 col-sm-6">
+                <div class="overlay-panel">
+                    <h1>Hello, Friend!</h1>
+                    <p>If you are a student</p>
+                    <a class="signInGG" href="/google">Sign In With Google</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer text-center">
+        <div>
+            ©2021 Đại học Tôn Đức Thắng
+            <br>
+            Ứng dụng được phát triển bởi sinh viên 51702183,51702015,51702026
+        </div>
+    </div>
+</body>
+</html>
