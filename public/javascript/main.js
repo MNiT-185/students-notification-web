@@ -116,7 +116,7 @@ function callAddPostOfFaculty(){
 
 socket.on('addPost', function(msg) {
   let post = msg.data
-  let item = `<div  class="alert alert-default text-center mx-auto my-3 user-modal-alert-addPost">${post.sender.name} có thông báo mới:<a href="/faculty/${post._id}">${post.title}</a></div>`
+  let item = `<div  class="alert alert-default text-center mx-auto my-3 user-modal-alert-addPost">${post.sender.name} có thông báo mới:<a href="/user/detailPost/${post._id}">${post.title}</a></div>`
   $(".notification-real-time-addPost").append(item)
   $(".user-modal-alert-addPost").css("display","block")
   setTimeout(function(){$(".notification-real-time-addPost").find('.user-modal-alert-addPost').remove() }, 5000);

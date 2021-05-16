@@ -111,7 +111,7 @@ let postNewFeeds = (req,res) =>{
         try {
             if(req.file && req.body.content !== undefined){
                 let today = new Date()
-                let currTime = today.getHours() + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+                let currTime = (today.getHours()+7) + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
                 let addPostItem = null
                 addPostItem = {
                     sender:{
@@ -133,7 +133,7 @@ let postNewFeeds = (req,res) =>{
             }
             if(req.file){
                 let today = new Date()
-                let currTime = today.getHours() + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+                let currTime = (today.getHours()+7) + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
                 let addPostItem = null
                 addPostItem = {
                     sender:{
@@ -155,7 +155,7 @@ let postNewFeeds = (req,res) =>{
 
             if(req.body.content &&  req.body.video){
                 let today = new Date()
-                let currTime = today.getHours() + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+                let currTime = (today.getHours()+7) + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
                 let addPostItem = {
                     sender:{
                         id: req.user._id,
@@ -177,7 +177,7 @@ let postNewFeeds = (req,res) =>{
 
             if(req.body.video){
                 let today = new Date()
-                let currTime = today.getHours() + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+                let currTime = (today.getHours()+7) + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
                 let addPostItem = {
                     sender:{
                         id: req.user._id,
@@ -198,7 +198,7 @@ let postNewFeeds = (req,res) =>{
 
             if(req.body.content ){
                 let today = new Date()
-                let currTime = today.getHours() + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+                let currTime = (today.getHours()+7) + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
                 let addPostItem = {
                     sender:{
                         id: req.user._id,
@@ -263,7 +263,7 @@ let postComment = async (req,res) =>{
         let avatarUser = userPostComment.avatar
         let nameUser = userPostComment.username
         let today = new Date()
-        let currTime = today.getHours() + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+        let currTime = (today.getHours()+7) + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
         let commentItem = {
             sender : {
                 id : idUser,

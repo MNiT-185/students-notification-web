@@ -73,7 +73,7 @@ let getListPostByCategory = async (req,res)=>{
 let addPostByCategory = async (req,res)=>{
     try {
         let today = new Date()
-        let currTime = today.getHours() + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+        let currTime = (today.getHours()+7) + ":" + today.getMinutes() + " " + today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
         let item = req.body
         let addItem = {
             sender:{
