@@ -11,7 +11,7 @@ const adminRoutes = require('./routes/admin')
 const facultyRoutes = require('./routes/faculty')
 const userRoutes = require('./routes/user')
 
-const port = process.env.PORT || 3000;
+
 
 // Init app
 const app = express()
@@ -58,6 +58,6 @@ io.on('connection', (socket) => {
 });
 
 
-http.listen(port,()=>{
+http.listen(process.env.PORT,()=>{
     console.log(`Server is running `)
 })
