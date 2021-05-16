@@ -1,6 +1,6 @@
 const passport = require('passport')
 const UserModel = require('./../../models/User')
-const {transError} = require('./../../../lang/vi')
+const {transError} = require('../../lang/vi')
 const GoogleStrategy = require('passport-google-oauth2').Strategy
 
 let initPassportGoogle = () =>{

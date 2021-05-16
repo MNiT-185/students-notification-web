@@ -2,7 +2,7 @@ const passport = require('passport')
 const bcrypt = require('bcrypt')
 const passportLocal = require('passport-local')
 const UserModel = require('./../../models/User')
-const {transError} = require('./../../../lang/vi')
+const {transError} = require('../../lang/vi')
 const LocalStrategy = passportLocal.Strategy
 
 let initPassportLocal = () =>{
