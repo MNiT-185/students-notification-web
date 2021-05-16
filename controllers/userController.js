@@ -1,6 +1,6 @@
 const multer =  require('multer')
 const UserModel = require('../models/User')
-const PostModel = require('../models/UserPorts')
+const PostModel = require('../models/Post')
 const CommentModel = require('../models/Comment')
 const FacultyPostModel = require('../models/ManagePosts')
 const FacultyModel = require('../models/User')
@@ -51,7 +51,7 @@ let updateAvatar = (req,res)=>{
             let listComment = await CommentModel.find({'sender.id':req.user._id})
             let listPost = await PostModel.find({'sender.id':req.user._id})
             //Remove user item
-            await fsExtra.remove(`${"src/public/images"}/${userUpdated.avatar}`)
+            await fsExtra.remove(`${"public/images"}/${userUpdated.avatar}`)
             let result = {
                 message : "Cập nhật ảnh đại diện thành công",
                 imageSrc : `/images/${req.file.filename}`,
@@ -230,7 +230,7 @@ let delPost = async (req,res) =>{
         let post = await PostModel.findByIdAndDelete(idPost).exec()
         let image = post.image
         if(image){
-            let destinationImg = 'src/public/imgNewFeeds/' + image
+            let destinationImg = 'public/imgNewFeeds/' + image
             fsExtra.remove(destinationImg, err => {
                 if (err) return console.error(err)
             })

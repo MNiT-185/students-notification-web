@@ -1,6 +1,6 @@
 const passport = require('passport')
 const UserModel = require('../models/User')
-const PostModel = require('../models/UserPorts')
+const PostModel = require('../models/Post')
 const CommentModel = require('../models/Comment')
 const ManagePostModel = require('../models/ManagePosts')
 

@@ -5,10 +5,10 @@ const bluebird = require('bluebird')
 let connectDB = () =>{
     mongoose.Promise = bluebird; 
 
-    DB_CONNECTION = 'mongodb'
-    DB_HOST = 'localhost'
+    DB_CONNECTION = "mongodb"
+    DB_HOST = "localhost"
     DB_PORT = 27017
-    DB_NAME ='student-notifications'
+    DB_NAME ="student-notifications"
     DB_USERNAME = ""
     DB_PASSWORD = ""
     // mongodb://localhost:27017//student_notifications

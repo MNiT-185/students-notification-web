@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 let Schema = mongoose.Schema
 
 let PostSchema = new Schema({
@@ -14,7 +15,6 @@ let PostSchema = new Schema({
     updatedAt: {type: String,default: null},
     deletedAt: {type: String,default: null}
 });
-
 PostSchema.statics = {
     createNew(item){
         return this.create(item);
