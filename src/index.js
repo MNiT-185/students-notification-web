@@ -11,7 +11,7 @@ const adminRoutes = require('./routes/admin')
 const facultyRoutes = require('./routes/faculty')
 const userRoutes = require('./routes/user')
 
-const port = process.env.PORT||3000;
+const port = process.env.PORT || 3000;
 
 // Init app
 const app = express()
@@ -21,7 +21,7 @@ const io = require('socket.io')(http);
 ConnectDB()
 
 // Enable post data for request
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.json())
 
 // Config View Engine
 configViewEngine(app)
