@@ -5,4 +5,4 @@
     Password : admin
 #Account Faculty
     Username : cntt@tdt.edu.vn
-    Password : 123456
+    Password : 654321
